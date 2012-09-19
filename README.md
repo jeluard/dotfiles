@@ -1,6 +1,6 @@
 ## Import .files
 
-Create a git repo in home then import files.
+Clone this repo. Will override all local files but .m2/settings.xml.
 
 ```
 cd ~

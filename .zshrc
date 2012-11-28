@@ -25,7 +25,7 @@ ZSH_THEME="minimal"
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -33,6 +33,13 @@ DISABLE_AUTO_TITLE="true"
 plugins=(command-coloring git github lein svn osxi vi-mode)
 
 source $ZSH/oh-my-zsh.sh
+
+bindkey -v
+setopt menu_complete
+unsetopt nomatch
+unsetopt share_history
+zstyle -e ':completion:*' menu select=1 _complete _ignored _approximate
+zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
 
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:~/bin

@@ -1,0 +1,43 @@
+[user]
+  name = Julien Eluard
+  email = julien.eluard@gmail.com
+
+[core]
+  autocrlf = input
+  safecrlf = true
+  excludesfile = /Users/julien/.gitignore_global
+
+[color]
+  ui = true
+  diff = true
+  grep = true
+  branch = true
+  showbranch = true
+  status = true
+
+[color "diff"]
+  plain = normal dim
+  meta = yellow dim
+  frag = blue bold
+  old = magenta
+  new = cyan
+  whitespace = red reverse
+
+[color "status"]
+  header = normal dim
+  added = yellow
+  untracked = magenta
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = red
+
+[alias]
+  ci = commit
+  pom = push origin master
+  st = status
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[credential]
+  helper = osxkeychain

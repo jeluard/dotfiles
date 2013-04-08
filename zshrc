@@ -37,6 +37,9 @@ unsetopt correct_all
 source $ZSH/oh-my-zsh.sh
 
 bindkey -v
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
 setopt menu_complete
 unsetopt nomatch
 unsetopt share_history

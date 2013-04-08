@@ -46,3 +46,4 @@ zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(
 # Customize to your needs...
 export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:~/bin
 export JAVA_HOME=$(/usr/libexec/java_home)
+export EDITOR=vim

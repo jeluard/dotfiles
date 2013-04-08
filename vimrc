@@ -2,6 +2,7 @@ set nocompatible
 set autoindent
 set hls
 set showmatch
+
 filetype on
 filetype off
 
@@ -19,12 +20,11 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
-"Bundle 'chriskempson/base16-vim'
 Bundle 'noprompt/lite-brite'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-sensible'
+Bundle 'sjl/gundo.vim'
 "http://bytefluent.com/vivify/
-"run vim +BundleInstall +qall to install new bundles
 
 filetype plugin on
 filetype indent on
@@ -44,7 +44,7 @@ au Syntax * RainbowParenthesesLoadBraces
 " http://vimdoc.sourceforge.net/htmldoc/indent.html
 set expandtab
 set shiftwidth=2
-set softtabstop=2 
+set softtabstop=2
 set encoding=utf-8
 set laststatus=2
 
@@ -57,3 +57,4 @@ set history=1000
 " set spell
 set cursorline
 set pastetoggle=<F2> "http://vim.wikia.com/wiki/VimTip906
+nnoremap <F5> :GundoToggle<CR>

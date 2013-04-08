@@ -43,6 +43,7 @@ bindkey '^[[B' down-line-or-search
 setopt menu_complete
 unsetopt nomatch
 unsetopt share_history
+unsetopt inc_append_history
 zstyle -e ':completion:*' menu select=1 _complete _ignored _approximate
 zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
 

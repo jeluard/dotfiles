@@ -1,4 +1,4 @@
 #!/bin/sh
 
 #Backup photos
-rsync -azP --delete --progress Capsulette/iPhoto\ Library/Masters/ Disquette/Photos/
+rsync -azP --delete --progress /Volumes/Capsulette/iPhoto\ Library/Masters/ /Volumes/Disquette/Photos/

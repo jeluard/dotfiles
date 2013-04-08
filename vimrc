@@ -24,6 +24,7 @@ Bundle 'noprompt/lite-brite'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-sensible'
 Bundle 'sjl/gundo.vim'
+Bundle 'rstacruz/sparkup'
 "http://bytefluent.com/vivify/
 
 filetype plugin on
@@ -47,14 +48,49 @@ set shiftwidth=2
 set softtabstop=2
 set encoding=utf-8
 set laststatus=2
+set relativenumber
+set noundofile
 
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 set listchars=tab:→\ ,trail:·
 set list
 set showbreak=↪
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
 
 set history=1000
 " set spell
 set cursorline
+set scrolloff=3
 set pastetoggle=<F2> "http://vim.wikia.com/wiki/VimTip906
 nnoremap <F5> :GundoToggle<CR>
+
+let mapleader = ","
+
+au FocusLost * :wa "save on focus lost
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+nnoremap <leader>w <C-w>v<C-w>l
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l

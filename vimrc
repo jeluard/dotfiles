@@ -2,6 +2,7 @@ set nocompatible
 set autoindent
 set hls
 set showmatch
+filetype on
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/

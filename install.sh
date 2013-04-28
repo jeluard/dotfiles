@@ -14,6 +14,6 @@ for name in *; do
   fi
 done
 
-vim +BundleInstall +qa
+vim +BundleInstall! +qa
 
 echo  '\e[0;32m'All installed'\e[0m'

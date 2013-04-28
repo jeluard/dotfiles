@@ -7,6 +7,7 @@ filetype on
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 call vundle#rc()
 
 Bundle 'Lokaltog/vim-easymotion'
@@ -19,7 +20,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 Bundle 'noprompt/lite-brite'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-sensible'

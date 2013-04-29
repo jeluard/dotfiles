@@ -24,7 +24,7 @@ Bundle 'noprompt/lite-brite'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-sensible'
 Bundle 'sjl/gundo.vim'
-Bundle 'rstacruz/sparkup'
+Bundle 'tristen/vim-sparkup'
 
 filetype plugin on
 filetype indent on

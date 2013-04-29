@@ -14,7 +14,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
-Bundle 'dgrnbrg/vim-redl.git'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'jelera/vim-javascript-syntax'
@@ -26,12 +25,10 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-sensible'
 Bundle 'sjl/gundo.vim'
 Bundle 'rstacruz/sparkup'
-"http://bytefluent.com/vivify/
 
 filetype plugin on
 filetype indent on
 syntax on
-"colorscheme base16-default
 colorscheme litebrite
 
 let g:Powerline_symbols = 'fancy'
@@ -82,12 +79,13 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
+inoremap <Nul> <C-x><C-o>
 
 nnoremap <leader>w <C-w>v<C-w>l
 

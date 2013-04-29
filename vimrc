@@ -10,7 +10,8 @@ set rtp+=~/.vim/bundle/vundle/
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 call vundle#rc()
 
-Bundle 'Lokaltog/vim-easymotion' "Leader Leader w, gE, t
+Bundle 'Lokaltog/vim-easymotion'
+"Leader Leader w, gE, t
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
@@ -21,10 +22,13 @@ Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/powerline'
 Bundle 'noprompt/lite-brite'
-Bundle 'airblade/vim-gitgutter'
+"Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-sensible'
 Bundle 'sjl/gundo.vim'
-Bundle 'tristen/vim-sparkup' " c-e, c-n
+Bundle 'tristen/vim-sparkup'
+" c-e, c-n
+Bundle 'mattn/gist-vim'
+Bundle 'mhinz/vim-signify'
 
 filetype plugin on
 filetype indent on

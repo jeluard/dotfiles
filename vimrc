@@ -31,6 +31,9 @@ Bundle 'mhinz/vim-signify'
 "Leader gh, gj, gk
 Bundle 'tpope/vim-characterize'
 " ga
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+" cs old new, ds old
 
 filetype plugin on
 filetype indent on

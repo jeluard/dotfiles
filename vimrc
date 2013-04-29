@@ -29,6 +29,8 @@ Bundle 'tristen/vim-sparkup'
 Bundle 'mattn/gist-vim'
 Bundle 'mhinz/vim-signify'
 "Leader gh, gj, gk
+Bundle 'tpope/vim-characterize'
+" ga
 
 filetype plugin on
 filetype indent on

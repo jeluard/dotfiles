@@ -22,13 +22,13 @@ Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/powerline'
 Bundle 'noprompt/lite-brite'
-"Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-sensible'
 Bundle 'sjl/gundo.vim'
 Bundle 'tristen/vim-sparkup'
 " c-e, c-n
 Bundle 'mattn/gist-vim'
 Bundle 'mhinz/vim-signify'
+"Leader gh, gj, gk
 
 filetype plugin on
 filetype indent on
@@ -69,7 +69,6 @@ set ruler
 set backspace=indent,eol,start
 
 set history=1000
-" set spell
 set cursorline
 set scrolloff=3
 set pastetoggle=<F2> "http://vim.wikia.com/wiki/VimTip906
@@ -83,10 +82,6 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <nop>
-"inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 inoremap <Nul> <C-x><C-o>

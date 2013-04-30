@@ -51,3 +51,11 @@ zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(
 export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:~/bin
 export JAVA_HOME=$(/usr/libexec/java_home)
 export EDITOR=vim
+
+function vir
+{
+  tmux new-session -d -s vir
+  tmux new-window -t vir:1 -n 'vim' "vim $*"
+  tmux split-window -d -t vir:1 -p 25 -v 'lein repl'
+  tmux attach-session -t vir
+}

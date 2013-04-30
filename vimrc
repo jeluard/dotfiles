@@ -35,6 +35,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 " cs old new, ds old
 Bundle 'Townk/vim-autoclose'
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin on
 filetype indent on
@@ -83,7 +84,11 @@ set history=1000
 set cursorline
 set scrolloff=3
 set pastetoggle=<F2> "http://vim.wikia.com/wiki/VimTip906
+map <F3> :NERDTreeToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
+
+let NERDTreeQuitOnOpen=1
+autocmd vimenter * if !argc() | NERDTree | endif
 
 let mapleader = ","
 

@@ -34,6 +34,7 @@ Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 " cs old new, ds old
+Bundle 'Townk/vim-autoclose'
 
 filetype plugin on
 filetype indent on

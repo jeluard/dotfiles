@@ -55,7 +55,7 @@ export EDITOR=vim
 function vir
 {
   tmux new-session -d -s vir
-  tmux new-window -t vir:1 -n 'vim' "vim $*"
-  tmux split-window -d -t vir:1 -p 25 -v 'lein repl'
+  tmux new-window -t vir:2 -n 'vim' "vim $*"
+  tmux split-window -d -t vir:2 -p 25 -v 'lein repl'
   tmux attach-session -t vir
 }

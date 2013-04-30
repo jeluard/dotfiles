@@ -35,7 +35,12 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 " cs old new, ds old
 Bundle 'Townk/vim-autoclose'
+Bundle 'jgdavey/tslime.vim'
 Bundle 'scrooloose/nerdtree'
+
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuxVars
 
 filetype plugin on
 filetype indent on

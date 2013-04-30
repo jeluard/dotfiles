@@ -57,6 +57,11 @@ set encoding=utf-8
 set laststatus=2
 set relativenumber
 set noundofile
+"set completeopt-=preview
+set completeopt=menuone,longest,preview
+set splitbelow
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 set listchars=tab:→\ ,trail:·

@@ -91,6 +91,8 @@ set scrolloff=3
 set pastetoggle=<F2> "http://vim.wikia.com/wiki/VimTip906
 map <F3> :NERDTreeToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
+noremap <leader>y "*y
+noremap <leader>yy "*Y""
 
 let NERDTreeQuitOnOpen=1
 autocmd vimenter * if !argc() | NERDTree | endif

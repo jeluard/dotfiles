@@ -13,7 +13,7 @@ ZSH_THEME="minimal"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -48,7 +48,7 @@ zstyle -e ':completion:*' menu select=1 _complete _ignored _approximate
 zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
 
 # Customize to your needs...
-export PATH=/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:~/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin
 export JAVA_HOME=$(/usr/libexec/java_home)
 export EDITOR=vim
 

@@ -4,3 +4,4 @@ target/
 *.un~
 .lein-env
 .lein-repl-history
+.lein-failures

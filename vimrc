@@ -37,6 +37,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'Townk/vim-autoclose'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'scrooloose/nerdtree'
+"Bundle 'sjl/vitality.vim'
 
 vmap <C-c><C-c> <Plug>SendSelectionToTmux
 nmap <C-c><C-c> <Plug>NormalModeSendToTmux
@@ -100,6 +101,8 @@ autocmd vimenter * if !argc() | NERDTree | endif
 let mapleader = ","
 
 au FocusLost * :wa "save on focus lost
+
+au BufNewFile,BufRead *.cljx    setf clojure
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>

@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(command-coloring git lein svn osxi vi-mode)
 
-unsetopt correct_all
+unsetopt correctall
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,4 +58,9 @@ function vir
   tmux new-window -t vir:2 -n 'vim' "vim $*"
   tmux split-window -d -t vir:2 -p 25 -v 'lein repl'
   tmux attach-session -t vir
+}
+
+function bigfiles
+{
+  tree -ah --du . | ack '\[(\d{3,}M|\d+.*G)\]'
 }

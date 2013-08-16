@@ -1,60 +1,46 @@
-set nocompatible
-set autoindent
-set hls
-set showmatch
-
-filetype on
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 call vundle#rc()
 
+"Better defaults
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-sleuth'
+"Improved navigation. Leader w, gE, t, f
 Bundle 'Lokaltog/vim-easymotion'
-"Leader Leader w, gE, t
+"Clojure support.
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'othree/html5.vim'
+Bundle 'vim-scripts/paredit.vim'
+"Git integration.
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/powerline'
-Bundle 'noprompt/lite-brite'
-Bundle 'tpope/vim-sensible'
+"Undo UI.
 Bundle 'sjl/gundo.vim'
-Bundle 'tristen/vim-sparkup'
-" c-e, c-n
-Bundle 'mattn/gist-vim'
+"Show git changes.  Leader gh, gj, gk
 Bundle 'mhinz/vim-signify'
-"Leader gh, gj, gk
+"Show character details.  ga
 Bundle 'tpope/vim-characterize'
-" ga
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-" cs old new, ds old
-Bundle 'Townk/vim-autoclose'
-Bundle 'jgdavey/tslime.vim'
+"File browser.
 Bundle 'scrooloose/nerdtree'
-"Bundle 'sjl/vitality.vim'
+"Color scheme
+Bundle 'noahfrederick/Hemisu'
+"Status bar
+Bundle 'bling/vim-airline'
+"Syntax Highlighting
+Bundle 'elzr/vim-json'
 
-vmap <C-c><C-c> <Plug>SendSelectionToTmux
-nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-nmap <C-c>r <Plug>SetTmuxVars
-
-filetype plugin on
-filetype indent on
-syntax on
-colorscheme litebrite
-
-let g:Powerline_symbols = 'fancy'
-
+"Enable rainbow parentheses support.
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+colorscheme hemisu
+
+filetype plugin indent on
+syntax on
 
 " Indentation: spaces only, 2 spaces indentation http://vim.wikia.com/wiki/Indenting_source_code
 " http://vimdoc.sourceforge.net/htmldoc/indent.html
@@ -64,18 +50,15 @@ set softtabstop=2
 set encoding=utf-8
 set laststatus=2
 set relativenumber
-set noundofile
-"set completeopt-=preview
 set completeopt=menuone,longest,preview
 set splitbelow
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+set autoindent
+set hls
+set showmatch
 set listchars=tab:→\ ,trail:·
 set list
 set showbreak=↪
-set showmode
+set noshowmode
 set showcmd
 set hidden
 set wildmenu
@@ -85,34 +68,37 @@ set cursorline
 set ttyfast
 set ruler
 set backspace=indent,eol,start
-
 set history=1000
 set cursorline
 set scrolloff=3
-set pastetoggle=<F2> "http://vim.wikia.com/wiki/VimTip906
-map <F3> :NERDTreeToggle<CR>
-nnoremap <F5> :GundoToggle<CR>
-noremap <leader>y "*y
-noremap <leader>yy "*Y""
+set undofile
+set undodir=~/.vim/tmp
+set clipboard=unnamed
 
+"Plugins configuration.
 let NERDTreeQuitOnOpen=1
 autocmd vimenter * if !argc() | NERDTree | endif
 
+let g:EasyMotion_leader_key = '<Leader>'
+
+"let g:paredit_electric_return=0
+
+" Highlight cljx files as clojure
+autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
+
+autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|pclose|endif
+
+"Key mapping
 let mapleader = ","
+set pastetoggle=<F4> "http://vim.wikia.com/wiki/VimTip906
+map <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :GundoToggle<CR>
 
-au FocusLost * :wa "save on focus lost
-
-au BufNewFile,BufRead *.cljx    setf clojure
-
+" Prevent usage of arrow keys in normal mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
-inoremap <Nul> <C-x><C-o>
-
-nnoremap <leader>w <C-w>v<C-w>l
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j

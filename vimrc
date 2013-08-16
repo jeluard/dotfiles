@@ -49,6 +49,7 @@ set shiftwidth=2
 set softtabstop=2
 set encoding=utf-8
 set laststatus=2
+set number
 set relativenumber
 set completeopt=menuone,longest,preview
 set splitbelow

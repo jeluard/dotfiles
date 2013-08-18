@@ -95,6 +95,12 @@ set pastetoggle=<F4> "http://vim.wikia.com/wiki/VimTip906
 map <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :GundoToggle<CR>
 
+"Change cursor shape in edit mode.
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"Have cursor stay in place when leaving edit mode.
+inoremap <silent> <Esc> <Esc>`^
+
 " Prevent usage of arrow keys in normal mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>

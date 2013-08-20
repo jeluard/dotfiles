@@ -99,7 +99,10 @@ nnoremap <F3> :GundoToggle<CR>
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 "Have cursor stay in place when leaving edit mode.
-inoremap <silent> <Esc> <Esc>`^
+let CursorColumnI = 0 "the cursor column position in INSERT
+autocmd InsertEnter * let CursorColumnI = col('.')
+autocmd CursorMovedI * let CursorColumnI = col('.')
+autocmd InsertLeave * if col('.') != CursorColumnI | call cursor(0, col('.')+1) | endif
 
 " Prevent usage of arrow keys in normal mode
 nnoremap <up> <nop>

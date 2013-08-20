@@ -75,6 +75,7 @@ set scrolloff=3
 set undofile
 set undodir=~/.vim/tmp
 set clipboard=unnamed
+set mouse=a
 
 "Plugins configuration.
 let NERDTreeQuitOnOpen=1

@@ -50,6 +50,7 @@ zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin
 export JAVA_HOME=$(/usr/libexec/java_home)
+export SLIMERJSLAUNCHER=/Applications/Firefox.app/Contents/MacOS/firefox
 export EDITOR=vim
 
 function vir

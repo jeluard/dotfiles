@@ -25,7 +25,7 @@ Bundle 'tpope/vim-characterize'
 "File browser.
 Bundle 'scrooloose/nerdtree'
 "Color scheme
-Bundle 'noahfrederick/Hemisu'
+Bundle 'noahfrederick/vim-hemisu'
 "Status bar
 Bundle 'bling/vim-airline'
 "Syntax Highlighting

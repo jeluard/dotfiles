@@ -6,6 +6,7 @@
   autocrlf = input
   safecrlf = true
   excludesfile = /Users/julien/.gitignore_global
+  editor = /usr/bin/vim
 
 [color]
   ui = true
@@ -34,12 +35,16 @@
   remote = red
 
 [alias]
-  ci = commit
   pom = push origin master
-  st = status
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  st = status -sb
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --since='7 days ago'
+  df = diff --word-diff
+  cm = commit -m
 
 [credential]
   helper = osxkeychain
+
 [branch]
   autosetuprebase = always
+[push]
+	default = simple

@@ -12,6 +12,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
+Bundle 'guns/vim-clojure-highlight'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'vim-scripts/paredit.vim'
 "Git integration.
@@ -23,19 +24,22 @@ Bundle 'mhinz/vim-signify'
 "Show character details.  ga
 Bundle 'tpope/vim-characterize'
 "File browser.
-Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
 "Color scheme
-Bundle 'noahfrederick/Hemisu'
+Bundle 'noahfrederick/vim-hemisu'
 "Status bar
 Bundle 'bling/vim-airline'
 "Syntax Highlighting
 Bundle 'elzr/vim-json'
+"/ autocomplete
+Bundle 'vim-scripts/SearchComplete'
 
 "Enable rainbow parentheses support.
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 colorscheme hemisu
 
@@ -74,16 +78,17 @@ set cursorline
 set scrolloff=3
 set undofile
 set undodir=~/.vim/tmp
-set clipboard=unnamed
-set mouse=a
+set clipboard+=unnamed
+set mouse=n
+set ttymouse=xterm2
+set title
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
 
-"Plugins configuration.
-let NERDTreeQuitOnOpen=1
-autocmd vimenter * if !argc() | NERDTree | endif
-
+let g:airline#extensions#tabline#enabled = 1
 let g:EasyMotion_leader_key = '<Leader>'
-
-"let g:paredit_electric_return=0
 
 " Highlight cljx files as clojure
 autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
@@ -93,17 +98,23 @@ autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|pclose|endif
 "Key mapping
 let mapleader = ","
 set pastetoggle=<F4> "http://vim.wikia.com/wiki/VimTip906
-map <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :GundoToggle<CR>
 
 "Change cursor shape in edit mode.
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 "Have cursor stay in place when leaving edit mode.
 let CursorColumnI = 0 "the cursor column position in INSERT
 autocmd InsertEnter * let CursorColumnI = col('.')
 autocmd CursorMovedI * let CursorColumnI = col('.')
 autocmd InsertLeave * if col('.') != CursorColumnI | call cursor(0, col('.')+1) | endif
+
+"Enable rainbow parentheses support.
+au BufEnter * RainbowParenthesesActivate
+au Syntax clojure RainbowParenthesesLoadRound
+au Syntax clojure RainbowParenthesesLoadSquare
+au Syntax clojure RainbowParenthesesLoadBraces
 
 " Prevent usage of arrow keys in normal mode
 nnoremap <up> <nop>

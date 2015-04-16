@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# Install vundle with git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
 for name in *; do
   target="$HOME/.$name"
   if [ -e "$target" ]; then

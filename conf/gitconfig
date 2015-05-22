@@ -41,10 +41,7 @@
   df = diff --word-diff
   cm = commit -m
 
-[credential]
-  helper = osxkeychain
-
 [branch]
   autosetuprebase = always
 [push]
-	default = simple
+  default = simple

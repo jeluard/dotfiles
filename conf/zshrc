@@ -1,0 +1,35 @@
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+autoload -U compinit
+compinit
+
+bindkey -v
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
+setopt correctall
+setopt menu_complete
+unsetopt nomatch
+unsetopt share_history
+unsetopt inc_append_history
+zstyle -e ':completion:*' menu select=1 _complete _ignored _approximate
+zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
+
+alias ll="ls -l --color"
+
+export EDITOR=vim
+
+function vir
+{
+  tmux new-session -d -s vir
+  tmux new-window -t vir:2 -n 'vim' "vim $*"
+  tmux split-window -d -t vir:2 -p 25 -v 'lein repl'
+  tmux attach-session -t vir
+}
+
+function bigfiles
+{
+  tree -ah --du . | ack '\[(\d{3,}M|\d+.*G)\]'
+}

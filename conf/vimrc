@@ -26,7 +26,7 @@ Bundle 'tpope/vim-characterize'
 "Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 "Color scheme
-Bundle 'noahfrederick/vim-hemisu'
+Bundle 'chriskempson/base16-vim'
 "Status bar
 Bundle 'bling/vim-airline'
 "Syntax Highlighting
@@ -42,7 +42,11 @@ call vundle#end()
 "au Syntax * RainbowParenthesesLoadSquare
 "au Syntax * RainbowParenthesesLoadBraces
 
-colorscheme hemisu
+let base16colorspace="256"
+set background=dark
+set t_ut=
+set t_Co=256
+colorscheme base16-eighties
 
 filetype plugin indent on
 syntax on

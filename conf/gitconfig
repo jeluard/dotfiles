@@ -43,5 +43,9 @@
 
 [branch]
   autosetuprebase = always
+
 [push]
   default = simple
+
+[credential]
+  helper = cache

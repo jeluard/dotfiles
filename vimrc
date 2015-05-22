@@ -1,7 +1,7 @@
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 "Better defaults
 Bundle 'tpope/vim-sensible'
@@ -34,6 +34,8 @@ Bundle 'bling/vim-airline'
 Bundle 'elzr/vim-json'
 "/ autocomplete
 Bundle 'vim-scripts/SearchComplete'
+
+call vundle#end()
 
 "Enable rainbow parentheses support.
 "au VimEnter * RainbowParenthesesToggle

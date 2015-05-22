@@ -10,7 +10,6 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'Lokaltog/vim-easymotion'
 "Clojure support.
 Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
 Bundle 'guns/vim-clojure-highlight'
 Bundle 'kien/rainbow_parentheses.vim'

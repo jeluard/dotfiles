@@ -1,4 +1,5 @@
-source ~/Documents/dotfiles/antigen/antigen.zsh
+fpath=( "$HOME/.zfunctions" $fpath )
+source ~/.antigen.zsh
 
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
@@ -9,6 +10,10 @@ SAVEHIST=1000
 PURE_GIT_UNTRACKED_DIRTY=0
 PURE_GIT_PULL=0
 
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle git
+antigen bundle lein
+antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 antigen apply
 

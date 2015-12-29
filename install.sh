@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# chsh -s $(which zsh)
+# https://github.com/chriskempson/base16-iterm2
+
 link-files() {
   for name in *; do
     target="$1$name"

@@ -3,6 +3,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
+
 "Better defaults
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-sleuth'

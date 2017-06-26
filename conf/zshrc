@@ -1,5 +1,12 @@
-fpath=( "$HOME/.zfunctions" $fpath )
-source ~/.antigen.zsh
+source ~/.zplug/init.zsh
+
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update --self
+else
+  source ~/.zplug/init.zsh
+fi
 
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
@@ -10,12 +17,19 @@ SAVEHIST=1000
 PURE_GIT_UNTRACKED_DIRTY=0
 PURE_GIT_PULL=0
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle git
-antigen bundle lein
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
-antigen apply
+zplug zsh-users/zsh-syntax-highlighting
+zplug mafredri/zsh-async
+zplug sindresorhus/pure, use:pure.zsh, as:theme
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
 
 autoload -U compinit promptinit
 compinit
@@ -54,7 +68,6 @@ zstyle ':completion:*:mv:*' ignore-line yes
 zstyle ':completion:*:cp:*' ignore-line yes
 
 export PROJECTS_HOME=$HOME/Documents/Projects/
-unalias gr
 alias ll="ls -l --color"
 alias gs="git st"
 alias gc="git cm ."
@@ -66,8 +79,6 @@ alias grcod="gr git cod"
 alias grswi="gr git checkout develop && gr git pull && gr git checkout -b"
 alias cdp="cd $PROJECTS_HOME"
 alias cdw="cd $PROJECTS_HOME/workspace"
-
-. <(gross completion)
 
 export EDITOR=vim
 export TERM=xterm-256color

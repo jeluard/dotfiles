@@ -3,7 +3,7 @@
 # chsh -s $(which zsh)
 # https://github.com/chriskempson/base16-iterm2
 
-link-files() {
+link_files () {
   for name in *; do
     target="$1$name"
     if [ -e "$target" ]; then
@@ -18,10 +18,9 @@ link-files() {
 }
 
 cd conf
-link-files "$HOME/."
+link_files "$HOME/."
 mkdir ~/.boot/
 cd boot/
-link-files "$HOME/.boot/"
-vim +BundleInstall! +qa
+link_files "$HOME/.boot/"
 
 echo  '\e[0;32m'All installed'\e[0m'

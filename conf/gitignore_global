@@ -5,3 +5,6 @@ target/
 .lein-env
 .lein-repl-history
 .lein-failures
+*.eml
+*.iml
+.idea

@@ -5,7 +5,6 @@
 [core]
   autocrlf = input
   safecrlf = true
-  excludesfile = /Users/julien/.gitignore_global
   editor = /usr/bin/vim
 
 [color]
@@ -38,14 +37,44 @@
   pom = push origin master
   st = status -sb
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --since='7 days ago'
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  dl = log -numstat -1
   df = diff --word-diff
-  cm = commit -m
+  cm = commit -e
+  co = checkout
+  cod = checkout develop
+  top = shortlog -sne
+  undo = reset --soft HEAD^
+  undor = reset --hard HEAD^
+  stash-all = stash save --include-untracked
+  amend = commit --amend
+  recent = lg ORIG_HEAD.. --stat --no-merges
+  br = symbolic-ref --short HEAD
+	conflicts = !git ls-files -u | cut -f 2 | sort -u
 
 [branch]
   autosetuprebase = always
 
 [push]
-  default = simple
+  default = current
+  followTags = true
+
+[merge]
+  conflictstyle = diff3
+
+[status]
+  showUntrackedFiles = all
+
+[transfer]
+  fsckobjects = true
+
+[diff]
+  tool = icdiff
+[difftool]
+  prompt = false
+[difftool "icdiff"]
+  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 
 [credential]
-  helper = cache
+  helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring 
+  #http://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo

@@ -53,17 +53,28 @@ zstyle ':completion:*:rm:*' ignore-line yes
 zstyle ':completion:*:mv:*' ignore-line yes
 zstyle ':completion:*:cp:*' ignore-line yes
 
+export PROJECTS_HOME=$HOME/Documents/Projects/
+unalias gr
 alias ll="ls -l --color"
+alias gs="git st"
+alias gc="git cm ."
+alias gd="git diff"
+alias grs="gr status"
+alias grd="gr git diff"
+alias grb="gr git br"
+alias grcod="gr git cod"
+alias grswi="gr git checkout develop && gr git pull && gr git checkout -b"
+alias cdp="cd $PROJECTS_HOME"
+alias cdw="cd $PROJECTS_HOME/workspace"
+
+. <(gross completion)
 
 export EDITOR=vim
 export TERM=xterm-256color
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='3;33'
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='less'
-export PROJECTS_HOME=$HOME/Documents/Projects/
 
 function vir
 {
@@ -77,3 +88,8 @@ function bigfiles
 {
   tree -ah --du . | ack '\[(\d{3,}M|\d+.*G)\]'
 }
+
+export JIRA_USER=julien.eluard@sigfox.com
+export JIRA_PASSWORD=FaFa99
+export PATH=$PATH:/home/julieneluard/Documents/Projects/workspace/tools/scripts
+export JAVA_HOME=/home/julieneluard/Downloads/jdk1.8.0_131

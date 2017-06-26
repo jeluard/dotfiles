@@ -1,48 +1,24 @@
-filetype off
+if empty(glob("~/.vim/autoload/plug.vim"))
+  " Ensure all needed directories exist  (Thanks @kapadiamush)
+  execute '!mkdir -p ~/.vim/plugged'
+  execute '!mkdir -p ~/.vim/autoload'
+  " Download the actual plugin manager
+  execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'kien/ctrlp.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'bling/vim-airline'
+Plug 'elzr/vim-json'
+Plug 'vim-scripts/SearchComplete'
 
-"Better defaults
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-sleuth'
-"Improved navigation. Leader w, gE, t, f
-Bundle 'Lokaltog/vim-easymotion'
-"Clojure support.
-Bundle 'tpope/vim-fireplace'
-Bundle 'guns/vim-clojure-static'
-Bundle 'guns/vim-clojure-highlight'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'vim-scripts/paredit.vim'
-"Git integration.
-Bundle 'tpope/vim-fugitive'
-"Undo UI.
-Bundle 'sjl/gundo.vim'
-"Show git changes.  Leader gh, gj, gk
-Bundle 'mhinz/vim-signify'
-"Show character details.  ga
-Bundle 'tpope/vim-characterize'
-"File browser.
-"Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-"Color scheme
-Bundle 'chriskempson/base16-vim'
-"Status bar
-Bundle 'bling/vim-airline'
-"Syntax Highlighting
-Bundle 'elzr/vim-json'
-"/ autocomplete
-Bundle 'vim-scripts/SearchComplete'
-
-call vundle#end()
-
-"Enable rainbow parentheses support.
-"au VimEnter * RainbowParenthesesToggle
-"au Syntax * RainbowParenthesesLoadRound
-"au Syntax * RainbowParenthesesLoadSquare
-"au Syntax * RainbowParenthesesLoadBraces
+filetype plugin indent on
+call plug#end()
 
 let base16colorspace="256"
 set background=dark
@@ -50,7 +26,6 @@ set t_ut=
 set t_Co=256
 colorscheme base16-eighties
 
-filetype plugin indent on
 syntax on
 
 " Indentation: spaces only, 2 spaces indentation http://vim.wikia.com/wiki/Indenting_source_code
@@ -97,6 +72,7 @@ set hlsearch
 let g:airline#extensions#tabline#enabled = 1
 let g:EasyMotion_leader_key = '<Leader>'
 
+set t_Co=256
 " Highlight cljx files as clojure
 autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
 
@@ -116,12 +92,6 @@ let CursorColumnI = 0 "the cursor column position in INSERT
 autocmd InsertEnter * let CursorColumnI = col('.')
 autocmd CursorMovedI * let CursorColumnI = col('.')
 autocmd InsertLeave * if col('.') != CursorColumnI | call cursor(0, col('.')+1) | endif
-
-"Enable rainbow parentheses support.
-au BufEnter * RainbowParenthesesActivate
-au Syntax clojure RainbowParenthesesLoadRound
-au Syntax clojure RainbowParenthesesLoadSquare
-au Syntax clojure RainbowParenthesesLoadBraces
 
 " Prevent usage of arrow keys in normal mode
 nnoremap <up> <nop>

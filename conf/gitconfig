@@ -1,6 +1,7 @@
 [user]
   name = Julien Eluard
   email = julien.eluard@gmail.com
+  signingKey = 0x8ADEAA104DBA03C3
 
 [core]
   autocrlf = input
@@ -50,7 +51,7 @@
   amend = commit --amend
   recent = lg ORIG_HEAD.. --stat --no-merges
   br = symbolic-ref --short HEAD
-	conflicts = !git ls-files -u | cut -f 2 | sort -u
+  conflicts = !git ls-files -u | cut -f 2 | sort -u
 
 [branch]
   autosetuprebase = always
@@ -58,6 +59,7 @@
 [push]
   default = current
   followTags = true
+  gpgSign = true
 
 [merge]
   conflictstyle = diff3
@@ -80,3 +82,7 @@
   #http://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo
 [gpg]
   program = gpg2
+[commit]
+  gpgSign = true
+[tag]
+  gpgSign = true

@@ -78,3 +78,5 @@
 [credential]
   helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring 
   #http://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo
+[gpg]
+  program = gpg2

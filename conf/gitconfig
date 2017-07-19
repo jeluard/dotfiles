@@ -59,7 +59,7 @@
 [push]
   default = current
   followTags = true
-  gpgSign = true
+  #gpgSign = true
 
 [merge]
   conflictstyle = diff3

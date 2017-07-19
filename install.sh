@@ -19,8 +19,5 @@ link_files () {
 
 cd conf
 link_files "$HOME/."
-mkdir ~/.boot/
-cd boot/
-link_files "$HOME/.boot/"
 
 echo  '\e[0;32m'All installed'\e[0m'

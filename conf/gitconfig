@@ -1,10 +1,9 @@
 [user]
   name = Julien Eluard
   email = julien.eluard@gmail.com
-  signingKey = 0x8ADEAA104DBA03C3
 
 [core]
-  autocrlf = input
+  autocrlf = false
   safecrlf = true
   editor = /usr/bin/vim
 
@@ -59,7 +58,7 @@
 [push]
   default = current
   followTags = true
-  #gpgSign = true
+  autoSetupRemote = true
 
 [merge]
   conflictstyle = diff3
@@ -74,15 +73,17 @@
   tool = icdiff
 [difftool]
   prompt = false
-[difftool "icdiff"]
-  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 
 [credential]
-  helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring 
   #http://stackoverflow.com/questions/36585496/error-when-using-git-credential-helper-with-gnome-keyring-as-sudo
 [gpg]
   program = gpg2
-[commit]
-  gpgSign = true
-[tag]
-  gpgSign = true
+[credential]
+  helper = /usr/local/share/gcm-core/git-credential-manager
+[init]
+  defaultBranch = main
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true

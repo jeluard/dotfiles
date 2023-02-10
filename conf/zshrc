@@ -87,20 +87,12 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='less'
 
-function vir
-{
-  tmux new-session -d -s vir
-  tmux new-window -t vir:2 -n 'vim' "vim $*"
-  tmux split-window -d -t vir:2 -p 25 -v 'lein repl'
-  tmux attach-session -t vir
-}
 
 function bigfiles
 {
   tree -ah --du . | ack '\[(\d{3,}M|\d+.*G)\]'
 }
 
-export JIRA_USER=julien.eluard@sigfox.com
-export JIRA_PASSWORD=FaFa99
-export PATH=$PATH:/home/julieneluard/Documents/Projects/workspace/tools/scripts
-export JAVA_HOME=/home/julieneluard/Downloads/jdk1.8.0_131
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="/usr/local/sbin:$PATH"
